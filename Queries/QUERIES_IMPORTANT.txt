@@ -1,0 +1,146 @@
+4776
+13385
+
+Il y a 30106 planètes dans la galaxie.
+
+if(temps == 10) for (int i = 0; i<dragonCurve1.length/2-2; i+=2){
+            query += "INSERT INTO Systems ('SystemName', 'SystemX', 'SystemY', 'Dual', 'StarType') VALUES ('System"+i+"','"+dragonCurve1[i]+"','"+dragonCurve1[i+1]+"','FALSE','F'); ";
+            System.out.println(i);
+        }
+
+if(temps == 10) for (int i = 0; i<20; i+=2){
+            query += "INSERT INTO Planet ('PlanetName', 'HumansNb', 'Distance', 'PlanetType', 'Oxygen', 'Water', 'AtmosphereQuantity', 'MagneticField', 'SystemId') VALUES ('Planet"+i+"','"+(i*1000)+"','"+(i+5000)+"','Jupiter','TRUE','FALSE', '0.6', '1.2', '"+i+"'); ";
+            System.out.println(i);
+        }
+
+
+                counter++;
+                if(counter==900){
+                    query+="; INSERT INTO Systems ('SystemName', 'SystemX', 'SystemY', 'Dual', 'StarType', 'Discovered', 'Scanned') VALUES ('BLACK_HOLE', 800, 500, 0, 'BH', 'FALSE', 'FALSE')";
+                    counter = 0;
+                }
+
+
+if(temps == 5){
+            array = new LinkedList<Algorithms.IntContainer>(Arrays.<Algorithms.IntContainer>asList());
+            for (int i = 0; i<all.length; i+=2){
+                array.add(new Algorithms.IntContainer((int)all[i], (int)all[i+1]));
+            }
+            norepetition = new ArrayList<Algorithms.IntContainer>();
+            withrepetition = new HashSet<Algorithms.IntContainer>();
+            for (Algorithms.IntContainer element : array) {
+                if (Collections.frequency(array, element) > 1) {
+                    withrepetition.add(element);
+                } else {
+                    norepetition.add(element);
+                }
+            }
+        }
+        if(temps == 8) {
+            i1 = norepetition.iterator();
+            i2 = withrepetition.iterator();
+        }
+        int counter = 0;
+        if(temps == 10) {
+            while (i1.hasNext()){
+                object = i1.next();
+                int x = ((Algorithms.IntContainer)object).a;
+                int y = ((Algorithms.IntContainer)object).b;
+                query += "INSERT INTO Systems ('SystemName', 'SystemX', 'SystemY', 'Dual', 'StarType', 'Discovered', 'Scanned') VALUES ('"+generateStarName()+"', "+x+", "+y+", 2, '"+generateStarType(x, y)+"', 'FALSE', 'FALSE');";
+            }
+            while (i2.hasNext()){
+                object = i2.next();
+                int x = ((Algorithms.IntContainer)object).a;
+                int y = ((Algorithms.IntContainer)object).b;
+                query += "INSERT INTO Systems ('SystemName', 'SystemX', 'SystemY', 'Dual', 'StarType', 'Discovered', 'Scanned') VALUES ('"+generateStarName()+"', "+x+", "+y+", 1, '"+generateStarType(x, y)+"', 'FALSE', 'FALSE');";
+            }
+        }
+
+Random r = new Random();
+        int nbPla;
+        if(temps == 10) {
+            for(int i = 4776; i<13385; i++){
+                nbPla = r.nextInt(8);
+                for(int j = 0; j<nbPla; j++){
+                    query += "INSERT INTO Planet ('PlanetName', 'HumansNb', 'Distance', 'Oxygen', 'Water', 'AtmosphereQuantity', 'MagneticField', 'Density', 'Discovered', 'Scanned', 'SystemId')";
+                    query += "VALUES ('"+generatePlanetName()+"', 0, "+generateDistance()+", "+oxygen()+", "+water()+", "+generateAtmosphereQuantity()+", "+generateMagneticField()+", "+generateDensity()+", 0, 0, "+i+");";
+                }
+            }
+        }
+
+if(temps == 10) {
+            query += "INSERT INTO Material ('MaterialName', 'MaterialDescription', 'Rarity', 'Unlocked') VALUES ('Iron', 'Fe : common material', 0.95, 1); ";
+            query += "INSERT INTO Material ('MaterialName', 'MaterialDescription', 'Rarity', 'Unlocked') VALUES ('Aluminium', 'Al : common material', 0.90, 1); ";
+            query += "INSERT INTO Material ('MaterialName', 'MaterialDescription', 'Rarity', 'Unlocked') VALUES ('Steel', 'Fe : When Steel is not enough', 0.8, 1); ";
+            query += "INSERT INTO Material ('MaterialName', 'MaterialDescription', 'Rarity', 'Unlocked') VALUES ('Kerosene', 'Fuel used in rockets', 0, 1); ";
+            query += "INSERT INTO Material ('MaterialName', 'MaterialDescription', 'Rarity', 'Unlocked') VALUES ('Sodium', 'Na : used in water detectors', 0.2, 1); ";
+            query += "INSERT INTO Material ('MaterialName', 'MaterialDescription', 'Rarity', 'Unlocked') VALUES ('Radium', 'Ra : radioactive material', 0.05, 1); ";
+            query += "INSERT INTO Material ('MaterialName', 'MaterialDescription', 'Rarity', 'Unlocked') VALUES ('Silicium', 'Si : used in photonics', 0.2, 1); ";
+            query += "INSERT INTO Material ('MaterialName', 'MaterialDescription', 'Rarity', 'Unlocked') VALUES ('Geniusium', 'Found in W-Type Stars', 0.01, 0); ";
+            query += "INSERT INTO Material ('MaterialName', 'MaterialDescription', 'Rarity', 'Unlocked') VALUES ('Lentilium', 'Found in A-Type Stars', 0.01, 0); ";
+        }
+
+if(temps == 10) {
+            query += "INSERT INTO Rocket ('RocketName', 'RocketDescription', 'Capacity', 'Speed', 'Unlocked') VALUES ('Cargo', 'Used_to_transport_people', 100000, 1000, 0); ";
+            query += "INSERT INTO Rocket ('RocketName', 'RocketDescription', 'Capacity', 'Speed', 'Unlocked') VALUES ('Orbiter', 'Light_and_effective,_used_to_explore.', 200, 1000000, 1); ";
+            query += "INSERT INTO Rocket ('RocketName', 'RocketDescription', 'Capacity', 'Speed', 'Unlocked') VALUES ('Lander', 'Can_easily_land_on_planet_to_explore_it', 15000, 100000, 0); ";
+        }
+
+
+if(temps == 10) {
+            //query += "DELETE FROM Material ; ";
+            query += "INSERT INTO Equipment ('EquipmentName', 'EquipmentDescription', 'Weight', 'Radius', 'Unlocked') 	VALUES ('Scanner1', 'Most_powerful_scanner', 1000, 100, 0); ";
+            query += "INSERT INTO Equipment ('EquipmentName', 'EquipmentDescription', 'Weight', 'Radius', 'Unlocked') 	VALUES ('Scanner2', 'Medium_range_scanner', 750, 40, 0); ";
+            query += "INSERT INTO Equipment ('EquipmentName', 'EquipmentDescription', 'Weight', 'Radius', 'Unlocked') 	VALUES ('Scanner3', 'Used_to_scan_a_planet_or_a_system', 75, 1, 1); ";
+            query += "INSERT INTO Equipment ('EquipmentName', 'EquipmentDescription', 'Weight', 'Unlocked') 		VALUES ('dOxygen', 'Used_to_detect_oxygen', 35, 0); ";
+            query += "INSERT INTO Equipment ('EquipmentName', 'EquipmentDescription', 'Weight', 'Unlocked') 		VALUES ('dWater', 'Used_to_detect_water', 35, 0); ";
+            query += "INSERT INTO Equipment ('EquipmentName', 'EquipmentDescription', 'Weight', 'Unlocked') 		VALUES ('dMagnetic', 'Used_to_detect_magnetism', 35, 0); ";
+            query += "INSERT INTO Equipment ('EquipmentName', 'EquipmentDescription', 'Weight', 'Unlocked') 		VALUES ('Robot', 'Can_be_landed_on_a_planet_to_explore_it', 800, 0); ";
+            query += "INSERT INTO Equipment ('EquipmentName', 'EquipmentDescription', 'Weight', 'Unlocked') 		VALUES ('CPU', 'Powerful_tool_to_boost_speed', 100, 0); ";
+            query += "INSERT INTO Equipment ('EquipmentName', 'EquipmentDescription', 'Weight', 'Unlocked') 		VALUES ('Container', 'Used_to_transport_materials', 10000, 1); ";
+        }
+
+if(temps == 10) {
+            query += "ALTER TABLE Material ADD Quantities FLOAT ; ";
+            query += "UPDATE Material SET Quantities = 1000 WHERE MaterialName NOT IN('Geniusium', 'Lentilium'); ";
+            }
+
+if(temps == 10) {
+            query += "ALTER TABLE Material ADD LastUpdate VARCHAR(100) ; ";
+            }
+
+if(temps == 10) {
+            String lu = String.valueOf(TimeUtils.millis());
+            query += "UPDATE Material SET LastUpdate = '"+lu+"'; ";
+            }
+
+if(temps == 10) {
+            query += "ALTER TABLE Planet ADD Favourite INTEGER";
+            }
+
+if(temps == 10) {
+            //query +="ALTER TABLE Player ADD PlanetName VARCHAR(100); ";
+            //query += "ALTER TABLE Planet ADD Favourite INTEGER";
+            //String lu = String.valueOf(TimeUtils.millis());
+            //query += "UPDATE Material SET LastUpdate = '"+lu+"'; ";
+            }
+
+if(temps == 10) {
+            query += "DELETE FROM 'Player';";
+            query += "ALTER TABLE Systems ADD Favourite INTEGER ;";
+            }
+
+if(temps == 10) {
+            query += "ALTER TABLE Equipment ADD Quantity INTEGER ;";
+            query += "ALTER TABLE Rocket ADD Quantity INTEGER ;";
+            }
+
+query += "ALTER TABLE Rocket ADD EquippedModules VARCHAR(100) ; ";
+query += "DELETE FROM Flights ;";            
+query += "UPDATE Equipment SET Quantity = 1 ; ";
+query += "UPDATE Rocket SET Quantity = 0 ; ";
+
+query += "ALTER TABLE Flights ADD EquippedModules VARCHAR(100)";
+            query += "ALTER TABLE Flights ADD FlightDuration VARCHAR";
+            query += "ALTER TABLE Flights ADD TakeOffTime VARCHAR";
+            query += "DELETE FROM Flights ;";
